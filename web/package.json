@@ -1,0 +1,16 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Un projet Web Template",
+  "main": "gulpfile.js",
+  "scripts": {
+
+  },
+  "keywords": [
+    "template",
+    "project",
+    "apave"
+  ],
+  "author": "Thomas Bonavia",
+  "license": ""
+}
