@@ -2,15 +2,19 @@
   "name": "web",
   "version": "1.0.0",
   "description": "Un projet Web Template",
+  "repository": "http://cool.html",
+  "license": "UNLICENSED",
   "main": "gulpfile.js",
-  "scripts": {
-
-  },
+  "scripts": {},
   "keywords": [
     "template",
     "project",
     "apave"
   ],
   "author": "Thomas Bonavia",
-  "license": ""
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "gulp": "^3.9.1",
+    "require-dir": "^0.3.1"
+  }
 }
