@@ -1,0 +1,3 @@
+# Module "web"
+
+Ce module contient l'application cliente HTML5/Javascript/CSS...

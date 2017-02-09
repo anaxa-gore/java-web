@@ -7,24 +7,23 @@ le code applicatif.
 Par exemple :
 ```
 +-- server/
-    +-- pom.xml
-    +-- common/
-        +-- pom.xml
-        +-- src/
-    +-- authentication/
-        +-- pom.xml
-        +-- src/
-    +-- module1/
-        +-- pom.xml
-        +-- src/
-    +-- module2/
-        +-- pom.xml
-        +-- src/
-    +-- application/
-        +-- pom.xml
-        +-- src/
+|  +-- pom.xml
+|  +-- common/
+|  |  +-- pom.xml
+|  |  +-- src/
+|  +-- authentication/
+|  |  +-- pom.xml
+|  |  +-- src/
+|  +-- module1/
+|  |  +-- pom.xml
+|  |  +-- src/
+|  +-- module2/
+|  |  +-- pom.xml
+|  |  +-- src/
+|  +-- application/
+|     +-- pom.xml
+|     +-- src/
 ```
-
 Dans l'exemple ci-dessus, on peut avoir :
 * `server` est le module racine de l'application à partir duquel on va construire notre `war`
 * Le module `common` est utilisé par tous les sous-modules, 
