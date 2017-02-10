@@ -15,6 +15,37 @@
 
   <packaging>pom</packaging>
 
+  <!-- Les différents profils servent à adresser les différentes plateformes pour le build -->
+  <!-- Par défaut, c'est le profil de dev qui est utilisé. -->
+  <!-- Ces profils permettent par exemple de ne pas effectuer de minification de l'appli Web sur -->
+  <!-- la plateforme de développement afin de permettre le debug mais de réaliser celle-ci en -->
+  <!-- intégration par exemple -->
+  <profiles>
+    <profile>
+      <id>Developpement</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <target.environnement>dev</target.environnement>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>Test</id>
+      <properties>
+        <target.environnement>test</target.environnement>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>Production</id>
+      <properties>
+        <target.environnement>prod</target.environnement>
+      </properties>
+    </profile>
+  </profiles>
+
   <!-- Ici les paramètres de build sont hérités par l'ensemble des sous-modules -->
   <build>
     <pluginManagement>

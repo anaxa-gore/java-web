@@ -42,8 +42,8 @@
               <goal>gulp</goal>
             </goals>
             <configuration>
-              <!-- Spécifie la cible : par défaut run la task default -->
-              <!-- TODO TBA : Choisir la cible dynamiquement ? -->
+              <!-- Spécifie la cible en utilisant les profiles MAVEN : par défaut run la task default -->
+              <arguments>${target.environnement}</arguments>
             </configuration>
           </execution>
         </executions>
