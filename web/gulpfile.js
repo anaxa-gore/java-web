@@ -14,14 +14,14 @@ var tasksDev = [];
 var tasksTest = [];
 var tasksProd = [];
 
-gulp.task('dev', tasksDev, function(){
+gulp.task('dev', tasksDev, function () {
   console.log('================================== HELLO DEV !!!');
 });
 
-gulp.task('test', tasksTest, function(){
+gulp.task('test', tasksTest, function () {
   console.log('================================== HELLO TEST !!!');
 });
 
-gulp.task('prod', tasksProd, function(){
+gulp.task('prod', tasksProd, function () {
   console.log('================================== HELLO PROD !!!');
 });
