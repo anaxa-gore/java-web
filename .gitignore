@@ -1,7 +1,15 @@
+# Fichiers Eclipse
 .settings/
 .project
+.classpath
+
+# Fichiers Intellij
 .idea/*
 *.iml
+
+# Fichiers Node
 **/node_modules/
-**/node_installation/
 **/target/
+
+# Fichiers MAVEN - compilation
+**/node_installation/
