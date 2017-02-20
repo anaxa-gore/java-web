@@ -9,6 +9,10 @@ Il est composé de plusieurs répertoires clés :
 - [`dist/` contient les fichiers générés](dist/DIST_FOLDER.md),
 - [`tmp/` contient les fichiers temporaires générés pendant le processus de build](tmp/TMP_FOLDER.md),
 
+Le module est préconfiguré pour l'intégration continue avec :
+- `webpack` pour la construction automatique des bundles,
+- `karma` pour le lancement des tests unitaires,
+- `jasmine` pour la syntaxe des tests unitaires
 
 Un test avec [+ plus +] ou [- moins -]...
  
