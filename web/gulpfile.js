@@ -10,18 +10,18 @@ requireDir('./gulp', {recurse: true});
 // Paramétrer les tâches à réaliser pour construire l'application dans chacun des
 // environnement => Par ex. pas de minification du code en dev mais minification
 // en test et prod !
-let tasksDev = ['test_unit'];
+let tasksDev = ['tests'];
 let tasksTest = [];
 let tasksProd = [];
 
-gulp.task('dev', tasksDev, function () {
+gulp.task('env:dev', tasksDev, function () {
   console.log('================================== HELLO DEV !!!');
 });
 
-gulp.task('test', tasksTest, function () {
+gulp.task('env:test', tasksTest, function () {
   console.log('================================== HELLO TEST !!!');
 });
 
-gulp.task('prod', tasksProd, function () {
+gulp.task('env:prod', tasksProd, function () {
   console.log('================================== HELLO PROD !!!');
 });

@@ -7,7 +7,7 @@ const Server = require('karma').Server;
 /**
  * Run test once and exit
  */
-gulp.task('test', function (done) {
+gulp.task('tests', function (done) {
   new Server({
     configFile: __dirname + '/../karma.conf.js',
     singleRun: true

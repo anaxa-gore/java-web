@@ -1,17 +1,22 @@
 /**
  * Created by A4811584 on 15/02/2017.
  */
-class Test {
-  /**
-   * @param nom Le nom du test
-   */
-  constructor(nom) {
-    this.nom = nom;
-  }
 
-  hello() {
-    return "hello " + this.nom;
-  }
+class Test {
+    /**
+     * @param {number} number Le nom du test
+     */
+    constructor(number) {
+        this.nom = number;
+    }
+
+    /**
+     * 
+     * @returns {Number}
+     */
+    hello() {
+        return this.nom;
+    }
 }
 
 module.exports = Test;
