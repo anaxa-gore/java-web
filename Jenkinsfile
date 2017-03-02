@@ -7,7 +7,7 @@ pipeline {
                 bat '''
                     echo "Multiline shell steps works too"
                     dir .
-                    exit 1
+                    exit 0
                 '''
             }
 
