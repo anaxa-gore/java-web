@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build (SQL, Server, Client)') {
             steps {
-                choice = input message: 'Platform to build ?', parameters: [choice(choices: "dev\ntest\nprod\n", description: 'Platform to build...', name: 'platform')]
+                def choice = input message: 'Platform to build ?', parameters: [choice(choices: "dev\ntest\nprod\n", description: 'Platform to build...', name: 'platform')]
 
                 echo 'mon choix : ' | choice
 
