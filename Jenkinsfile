@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('Build (SQL, Server, Client)') {
             steps {
+                script{
                 def platformToBuild = input(message: 'Platform to build ?', parameters: [choice(choices: "dev\ntest\nprod\n", description: 'Platform to build...', name: 'platform')])
-
-                echo('mon choix : ' + platformToBuild)
+                    echo('mon choix : ' + platformToBuild)
+                }
 
                 // Build de la partie serveur
                 dir('server') {
