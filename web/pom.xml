@@ -1,57 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <parent>
-    <artifactId>archetype-model</artifactId>
-    <groupId>com.apave.tba.archetype</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
-  <modelVersion>4.0.0</modelVersion>
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>archetype-model</artifactId>
+        <groupId>com.apave.tba.archetype</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>web</artifactId>
+    <artifactId>web</artifactId>
 
-  <!-- On utilise le plugin maven frontend-maven-plugin pour lancer les commandes gulp avec maven -->
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>com.github.eirslett</groupId>
-        <artifactId>frontend-maven-plugin</artifactId>
-        <version>1.3</version>
+    <!-- On utilise le plugin maven frontend-maven-plugin pour lancer les commandes gulp avec maven -->
+    <build>
+        <sourceDirectory>${project.basedir}/src</sourceDirectory>
+      
+        <plugins>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>1.3</version>
 
-        <executions>
-          <execution>
-            <id>Installation de node et npm</id>
-            <goals>
-              <goal>install-node-and-npm</goal>
-            </goals>
-            <configuration>
-              <!-- Pour changer la version de NODE, voir les version dispos : https://nodejs.org/dist/ -->
-              <nodeVersion>v6.9.5</nodeVersion>
-            </configuration>
-          </execution>
-          <execution>
-            <id>Npm install</id>
-            <goals>
-              <goal>npm</goal> <!-- Par défaut : install -->
-            </goals>
-          </execution>
-          <execution>
-            <id>Build Gulp</id>
-            <goals>
-              <goal>gulp</goal>
-            </goals>
-            <configuration>
-              <!-- Spécifie la cible en utilisant les profiles MAVEN : par défaut run la task "default" -->
-              <arguments>${target.environnement}</arguments>
-            </configuration>
-          </execution>
-        </executions>
+                <executions>
+                    <execution>
+                        <id>Installation de node et npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Pour changer la version de NODE, voir les version dispos : https://nodejs.org/dist/ -->
+                            <nodeVersion>v6.9.5</nodeVersion>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>Npm install</id>
+                        <goals>
+                            <goal>npm</goal> <!-- Par défaut : install -->
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>Build Gulp</id>
+                        <goals>
+                            <goal>gulp</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Spécifie la cible en utilisant les profiles MAVEN : par défaut run la task "default" -->
+                            <arguments>${target.environnement}</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
 
-        <configuration>
-          <installDirectory>node_installation</installDirectory>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+                <configuration>
+                    <installDirectory>node_installation</installDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
