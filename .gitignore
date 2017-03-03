@@ -13,3 +13,6 @@
 
 # Fichiers MAVEN - compilation
 **/node_installation/
+
+# Fichiers rapports (tests unitaires, couverture...)
+reports/

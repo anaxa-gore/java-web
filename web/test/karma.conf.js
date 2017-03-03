@@ -1,11 +1,11 @@
 'use strict';
 
-let webpackConfig = require('./webpack.config');
+let webpackConfig = require('./../webpack.config.js');
 
 module.exports = (config) => {
   config.set({
     // --- Configuration Karma "standard"
-    basePath: '.',
+    basePath: '../',
     autoWatch: true,
     browsers: [
       // 'Chrome',
@@ -21,6 +21,8 @@ module.exports = (config) => {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-phantomjs-launcher'),
+      require('karma-coverage'),
+      require('karma-junit-reporter'),
     ],
 
     // --- Configuration karma-webpack
@@ -29,6 +31,7 @@ module.exports = (config) => {
     // uniquement les fichiers de tests => les fichiers sources sont construits
     // à partir des imports.
     files: [
+      './test/*.specs.js',
       './test/**/*.specs.js'
     ],
 
