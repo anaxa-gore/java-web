@@ -11,17 +11,19 @@ pipeline {
         }
         stage('Tests (Server, Client)') {
             steps {
-
+                echo 'Tests'
             }
         }
         stage('Deploy - Dev') {
             steps {
+                echo 'Deploy-dev'
                 //gulp 'web/gulpfile.js'
             }
         }
         stage('Deploy - Test') {
             steps {
                 //gulp 'web/gulpfile.js'
+                echo 'Deploy-Tests'
             }
         }
     }
