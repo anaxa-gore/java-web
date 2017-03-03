@@ -1,15 +1,15 @@
 pipeline {
     agent any
+    parameters {
+        choice(
+                choices: 'dev\ntest\nprod\n',
+                description: 'La plteforme à builder',
+                name: 'PLATFORM_TO_BUILD'
+        )
+    }
+
     stages {
         stage('Build (SQL, Server, Client)') {
-            parameters {
-                choice(
-                        choices: 'dev\ntest\nprod\n',
-                        description: 'La plteforme à builder',
-                        name: 'PLATFORM_TO_BUILD'
-                )
-            }
-
             steps {
                 echo('mon choix : ' + params.PLATFORM_TO_BUILD)
 
