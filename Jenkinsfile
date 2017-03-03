@@ -5,7 +5,7 @@ pipeline {
             parameters {
                 choice(
                         choices: 'dev\ntest\nprod\n',
-                        description: 'La plteforme à builder'
+                        description: 'La plteforme à builder',
                         name: 'PLATFORM_TO_BUILD'
                 )
             }
