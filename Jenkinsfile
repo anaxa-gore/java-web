@@ -17,7 +17,7 @@ pipeline {
 
                 // echo "env:${params.PLATFORM_TO_BUILD}"
                 // build serveur/client
-                bat "mvn test -Penv:${params.PLATFORM_TO_BUILD}"
+                bat "mvn test -P${params.PLATFORM_TO_BUILD}"
             }
         }
         stage('Tests (Server, Client)') {
