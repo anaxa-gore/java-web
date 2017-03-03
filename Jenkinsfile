@@ -3,6 +3,9 @@ pipeline {
     stages {
         stage('Build (SQL, Server, Client)') {
             steps {
+                input 'Go ?'
+
+                // Build de la partie serveur
                 dir('server') {
                     bat 'dir .'
 
