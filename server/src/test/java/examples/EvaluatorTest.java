@@ -11,6 +11,6 @@ public class EvaluatorTest {
     @Test
     public void testMagicNumber() {
         Evaluator ev = new Evaluator();
-        assertEquals(ev.magicNumber(), 13);
+        assertEquals(ev.magicNumber(), 12);
     }
 }
