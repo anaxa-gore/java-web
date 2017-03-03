@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build (SQL, Server, Client)') {
             steps {
-                input message:'Plateforme ?', parameters:['dev', 'test', 'prod']
+                input message:'Plateforme ?', parameters:[{name:'dev'}, {name:'test'}, {name:'prod'}]
 
                 // Build de la partie serveur
                 dir('server') {
