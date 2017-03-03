@@ -1,10 +1,12 @@
 pipeline {
     agent any
+
+    // Les paramètres sont accessibles ensuite n'importe où dans params.$NOM_VARIABLE
     parameters {
         choice(
                 choices: 'dev\ntest\nprod\n',
                 description: 'Platform to build...',
-                name: 'PLATFORM_TO_BUILD'
+                name: 'PLATFORM_TO_BUILD' // params.PLATFORM_TO_BUILD
         )
     }
 
@@ -13,12 +15,8 @@ pipeline {
             steps {
                 echo('mon choix : ' + params.PLATFORM_TO_BUILD)
 
-                // Build de la partie serveur
-                dir('server') {
-                    bat 'dir .'
-
-                    echo '=============================== stop'
-                }
+                // build serveur/client
+                bat 'mvn test -Penv:${params.PLATFORM_TO_BUILD}'
             }
         }
         stage('Tests (Server, Client)') {

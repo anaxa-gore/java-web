@@ -45,7 +45,7 @@
                         </goals>
                         <configuration>
                             <!-- Spécifie la cible en utilisant les profiles MAVEN : par défaut run la task "default" -->
-                            <arguments>${target.environnement}</arguments>
+                            <arguments>env:${target.environnement}</arguments>
                         </configuration>
                     </execution>
                 </executions>
