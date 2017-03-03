@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build (SQL, Server, Client)') {
             steps {
-                dir 'server/' {
-                    bat 'dir ./'
+                dir('server') {
+                    bat 'dir .'
 
                     echo '=============================== stop'
                 }
