@@ -6,21 +6,20 @@ pipeline {
         choice(
                 choices: 'dev\ntest\nprod\n',
                 description: 'Platform to build...',
-                name: 'PLATFORM_TO_BUILD' // params.PLATFORM_TO_BUILD
+                name: 'PLATFORM_TO_BUILD' // utilisable dans =>  params.PLATFORM_TO_BUILD
         )
     }
 
     stages {
-        stage('Build (SQL, Server, Client)') {
+        stage('Tests (Server, Client)') {
             steps {
-                echo('mon choix : ' + params.PLATFORM_TO_BUILD)
-
-                // echo "env:${params.PLATFORM_TO_BUILD}"
-                // build serveur/client
+                // On run les tests
                 bat "mvn test -P${params.PLATFORM_TO_BUILD}"
+
+
             }
         }
-        stage('Tests (Server, Client)') {
+        stage('Build (SQL, Server, Client)') {
             steps {
                 echo 'Tests'
             }
