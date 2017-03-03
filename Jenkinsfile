@@ -1,14 +1,25 @@
 pipeline {
     agent any
     stages {
-        stage('Build Server') {
+        stage('Build (SQL, Server, Client)') {
             steps {
-                bat 'echo "Hello Server"'
+
+
             }
         }
-        stage('Build Web Client') {
+        stage('Tests (Server, Client)') {
             steps {
-                bat 'echo "Hello Client"'
+
+            }
+        }
+        stage('Deploy - Dev') {
+            steps {
+                gulp 'web/gulpfile.js'
+            }
+        }
+        stage('Deploy - Test') {
+            steps {
+                gulp 'web/gulpfile.js'
             }
         }
     }
