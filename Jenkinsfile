@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo('mon choix : ' + params.PLATFORM_TO_BUILD)
 
-                bat 'echo "env:${params.PLATFORM_TO_BUILD}"'
+                echo "env:${params.PLATFORM_TO_BUILD}"
                 // build serveur/client
                 //bat 'mvn test -Penv:${params.PLATFORM_TO_BUILD}'
             }
