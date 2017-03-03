@@ -1,23 +1,18 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Build Server') {
             steps {
-                bat 'echo "Hello World"'
-                bat '''
-                    echo "Multiline shell steps works too"
-                    dir .
-                    exit 0
-                '''
+                bat 'echo "Hello Server"'
             }
 
-            post {
-                always {
-                    bat 'echo "Fin du build"'
-                }
-                failure {
-                    bat 'echo "C\'est un échec"'
-                }
+            steps {
+                bat 'echo "Coucou hombre"'
+            }
+        }
+        stage('Build Web Client') {
+            steps {
+                bat 'echo "Hello Client"'
             }
         }
     }
