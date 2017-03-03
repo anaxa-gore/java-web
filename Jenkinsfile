@@ -14,12 +14,12 @@ pipeline {
         }
         stage('Deploy - Dev') {
             steps {
-                gulp 'web/gulpfile.js'
+                //gulp 'web/gulpfile.js'
             }
         }
         stage('Deploy - Test') {
             steps {
-                gulp 'web/gulpfile.js'
+                //gulp 'web/gulpfile.js'
             }
         }
     }
