@@ -5,7 +5,7 @@ pipeline {
             steps {
                 def choice = input(message: 'Platform to build ?', parameters: [choice(choices: "dev\ntest\nprod\n", description: 'Platform to build...', name: 'platform')])
 
-                echo 'mon choix : ' | choice
+                echo('mon choix : ' + choice)
 
                 // Build de la partie serveur
                 dir('server') {
