@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('Build (SQL, Server, Client)') {
             steps {
+                bat 'cd server'
+                bat 'dir .'
 
-
+                echo '=============================== stop'
             }
         }
         stage('Tests (Server, Client)') {
