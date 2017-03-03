@@ -5,10 +5,6 @@ pipeline {
             steps {
                 bat 'echo "Hello Server"'
             }
-
-            steps {
-                bat 'echo "Coucou hombre"'
-            }
         }
         stage('Build Web Client') {
             steps {
