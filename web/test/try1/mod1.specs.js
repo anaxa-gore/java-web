@@ -7,6 +7,6 @@ describe('Test de la classe de test', () => {
   it('create a test', () => {
     let t = new Test(1);
     console.log(t.hello());
-    expect(t.hello()).toBe(3);
+    expect(t.hello()).toBe(1);
   })
 });
