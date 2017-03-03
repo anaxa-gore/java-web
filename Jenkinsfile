@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Build (SQL, Server, Client)') {
             steps {
-                input message:'Plateforme ?', parameters:[{name:'dev'}, {name:'test'}, {name:'prod'}]
+                input message: 'Plateforme ?', parameters: [[
+                                                                    $class: ChoiceParameterDefinition(name: 'Plateforme', choices = 'dev,test,prod', description: 'La plateforme à builder')
+                                                            ]]
 
                 // Build de la partie serveur
                 dir('server') {
