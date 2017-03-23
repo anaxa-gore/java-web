@@ -29,7 +29,7 @@
                         </goals>
                         <configuration>
                             <!-- Pour changer la version de NODE, voir les version dispos : https://nodejs.org/dist/ -->
-                            <nodeVersion>v7.7.3</nodeVersion>
+                            <nodeVersion>v6.9.5</nodeVersion>
                         </configuration>
                     </execution>
                     <execution>
