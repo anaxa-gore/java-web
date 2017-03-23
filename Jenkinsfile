@@ -13,10 +13,10 @@ pipeline {
     stages {
         stage('Tests (Server, Client)') {
             steps {
+				def mvnHome = tool 'm3'
+			
                 // On run les tests
-                sh "mvn test -P${params.PLATFORM_TO_BUILD}"
-
-
+                sh "${mvnHome}/bin/mvn test -P${params.PLATFORM_TO_BUILD}"
             }
         }
         stage('Build (SQL, Server, Client)') {
