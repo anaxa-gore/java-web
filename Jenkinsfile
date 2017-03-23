@@ -17,7 +17,8 @@ pipeline {
         stage('Tests (Server, Client)') {
             steps {
                 // On run les tests
-                sh "mvn test -P${params.PLATFORM_TO_BUILD}"
+                sh "mvn clean"
+                sh "mvn install -P${params.PLATFORM_TO_BUILD}"
             }
         }
         stage('Build (SQL, Server, Client)') {
