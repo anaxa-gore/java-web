@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'm3'
+    }
 
     // Les paramètres sont accessibles ensuite n'importe où dans params.$NOM_VARIABLE
     parameters {
@@ -13,10 +16,8 @@ pipeline {
     stages {
         stage('Tests (Server, Client)') {
             steps {
-				def mvnHome = tool 'm3'
-			
                 // On run les tests
-                sh "${mvnHome}/bin/mvn test -P${params.PLATFORM_TO_BUILD}"
+                sh "mvn test -P${params.PLATFORM_TO_BUILD}"
             }
         }
         stage('Build (SQL, Server, Client)') {
