@@ -14,7 +14,7 @@ pipeline {
         stage('Tests (Server, Client)') {
             steps {
                 // On run les tests
-                bat "mvn test -P${params.PLATFORM_TO_BUILD}"
+                sh "mvn test -P${params.PLATFORM_TO_BUILD}"
 
 
             }
