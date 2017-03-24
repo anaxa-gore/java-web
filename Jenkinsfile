@@ -16,9 +16,23 @@ pipeline {
     stages {
         stage('Tests (Server, Client)') {
             steps {
+                // On signale le début des Tests
+                rocketSend channel: 'ic', message: 'Tests started'
+
                 // On run les tests
                 sh "mvn clean"
                 sh "mvn install -P${params.PLATFORM_TO_BUILD}"
+            }
+            post {
+                success {
+                    rocketSend channel: 'ic', message: 'Tests successful'
+                }
+                unstable {
+                    rocketSend channel: 'ic', message: 'Tests failed'
+                }
+                failure {
+                    rocketSend channel: 'ic', message: 'Tests failed'
+                }
             }
         }
         stage('Build (SQL, Server, Client)') {
