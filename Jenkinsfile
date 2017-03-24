@@ -17,14 +17,12 @@ pipeline {
         stage('Tests (Server, Client)') {
             steps {
                 // On signale le début des Tests
-                rocketSend channel: 'ic', message: 'Début des tests'
-                //rocketSend
-                //	attachments: [audioUrl: '', authorIcon: '', authorName: '', color: 'green', imageUrl: '', messageLink: '', text: 'Build Succes', thumbUrl: '', title: 'my attachment', titleLink: '', titleLinkDownload: '', videoUrl: ''],
-                //	channel: 'general', message: 'My message', rawMessage: true
+                //rocketSend channel: 'ic', message: 'Début des tests'
+                rocketSend attachments: [audioUrl: '', authorIcon: '', authorName: '', color: 'green', imageUrl: '', messageLink: '', text: 'Build Succes', thumbUrl: '', title: 'my attachment', titleLink: '', titleLinkDownload: '', videoUrl: ''], channel: 'general', message: 'My message', rawMessage: true
 
                 // On run les tests
                 sh "mvn clean"
-                sh "mvn install -P${params.PLATFORM_TO_BUILD} -X"
+                sh "mvn install -P${params.PLATFORM_TO_BUILD}"
             }
             post {
                 success {
