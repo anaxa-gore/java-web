@@ -18,12 +18,6 @@ pipeline {
             steps {
                 // On signale le début des Tests
                 rocketSend channel: 'ic', message: 'Début des tests'
-                //rocketSend
-                //    attachments: [
-                //        [color: 'green', text: 'Build Succes', title: 'my attachment'],
-                //        [color: 'green', text: 'Build Succes', title: 'my attachment']
-                //    ],
-                //    channel: 'general', message: 'My message', rawMessage: true
 
                 // On run les tests
                 sh "mvn clean"
@@ -31,17 +25,13 @@ pipeline {
             }
             post {
                 success {
-                    //rocketSend attachments: [color: 'green', text: 'Tests OK', title: 'Résultat des tests'], channel: 'ic', message: 'Tests successful'
-                    //rocketSend channel: 'ic', message: 'Tests OK'
-                    rocketSend attachments: [[audioUrl: '', authorIcon: '', authorName: '', color: 'red', imageUrl: '', messageLink: '', text: 'Tests KO', thumbUrl: '', title: 'Erreur', titleLink: '', titleLinkDownload: '', videoUrl: '']], channel: 'ic', message: 'Fin des tests', rawMessage: true
+                    rocketSend attachments: [[color: 'red', text: 'Tests OK', title: 'Fin']], channel: 'ic', message: 'Fin des tests', rawMessage: true
                 }
                 unstable {
-                    //rocketSend attachments: [color: 'red', text: 'Tests KO', title: 'Résultat des tests'], channel: 'ic', message: 'Tests failed'
-                    rocketSend channel: 'ic', message: 'Tests KO'
+                    rocketSend attachments: [[color: 'red', text: 'Tests KO', title: 'Erreur']], channel: 'ic', message: 'Fin des tests', rawMessage: true
                 }
                 failure {
-                    //rocketSend attachments: [color: 'red', text: 'Tests KO', title: 'Résultat des tests'], channel: 'ic', message: 'Tests failed'
-                    rocketSend channel: 'ic', message: 'Tests KO'
+                    rocketSend attachments: [[color: 'red', text: 'Tests KO', title: 'Erreur']], channel: 'ic', message: 'Fin des tests', rawMessage: true
                 }
             }
         }
