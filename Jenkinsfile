@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // On signale le début des Tests
                 //rocketSend channel: 'ic', message: 'Début des tests'
-                rocketSend attachments: [audioUrl: '', authorIcon: '', authorName: '', color: 'green', imageUrl: '', messageLink: '', text: 'Build Succes', thumbUrl: '', title: 'my attachment', titleLink: '', titleLinkDownload: '', videoUrl: ''], channel: 'general', message: 'My message', rawMessage: true
+                rocketSend attachments: [{audioUrl: '', authorIcon: '', authorName: '', color: 'green', imageUrl: '', messageLink: '', text: 'Build Succes', thumbUrl: '', title: 'my attachment', titleLink: '', titleLinkDownload: '', videoUrl: ''}], channel: 'general', message: 'My message', rawMessage: true
 
                 // On run les tests
                 sh "mvn clean"
