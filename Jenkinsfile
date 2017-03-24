@@ -17,7 +17,7 @@ pipeline {
         stage('Tests (Server, Client)') {
             steps {
                 // On signale le début des Tests
-                rocketSend channel: 'ic', message: 'Tests started', rawMessage: true
+                rocketSend channel: 'ic', message: 'Tests started'
 
                 // On run les tests
                 sh "mvn clean"
@@ -25,13 +25,19 @@ pipeline {
             }
             post {
                 success {
-                    rocketSend channel: 'ic', message: 'Tests successful'
+                    rocketSend
+                        attachments: [color: 'green', text: 'Tests OK'],
+                        channel: 'ic', message: 'Tests successful'
                 }
                 unstable {
-                    rocketSend channel: 'ic', message: 'Tests failed'
+                    rocketSend
+                        attachments: [color: 'red', text: 'Tests KO'],
+                        channel: 'ic', message: 'Tests failed'
                 }
                 failure {
-                    rocketSend channel: 'ic', message: 'Tests failed'
+                    rocketSend
+                        attachments: [color: 'red', text: 'Tests KO'],
+                        channel: 'ic', message: 'Tests failed'
                 }
             }
         }
