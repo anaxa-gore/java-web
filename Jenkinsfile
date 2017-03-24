@@ -17,13 +17,13 @@ pipeline {
         stage('Tests (Server, Client)') {
             steps {
                 // On signale le début des Tests
-                //rocketSend channel: 'ic', message: 'Début des tests'
-                rocketSend
-                    attachments: [
-                        [color: 'green', text: 'Build Succes', title: 'my attachment'],
-                        [color: 'green', text: 'Build Succes', title: 'my attachment']
-                    ],
-                    channel: 'general', message: 'My message', rawMessage: true
+                rocketSend channel: 'ic', message: 'Début des tests'
+                //rocketSend
+                //    attachments: [
+                //        [color: 'green', text: 'Build Succes', title: 'my attachment'],
+                //        [color: 'green', text: 'Build Succes', title: 'my attachment']
+                //    ],
+                //    channel: 'general', message: 'My message', rawMessage: true
 
                 // On run les tests
                 sh "mvn clean"
@@ -32,7 +32,11 @@ pipeline {
             post {
                 success {
                     //rocketSend attachments: [color: 'green', text: 'Tests OK', title: 'Résultat des tests'], channel: 'ic', message: 'Tests successful'
-                    rocketSend channel: 'ic', message: 'Tests OK'
+                    //rocketSend channel: 'ic', message: 'Tests OK'
+                    rocketSend
+                        attachments: [[color: 'green', text: 'Tests OK', title: 'Fin des tests']],
+                        channel: 'ic', message: 'Fin des tests', rawMessage: true
+
                 }
                 unstable {
                     //rocketSend attachments: [color: 'red', text: 'Tests KO', title: 'Résultat des tests'], channel: 'ic', message: 'Tests failed'
