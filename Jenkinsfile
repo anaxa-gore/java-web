@@ -17,7 +17,7 @@ pipeline {
         stage('Tests (Server, Client)') {
             steps {
                 // On signale le début des Tests
-                rocketSend channel: 'ic', message: 'Tests started'
+                rocketSend channel: 'ic', message: 'Tests started', rawMessage: true
 
                 // On run les tests
                 sh "mvn clean"
