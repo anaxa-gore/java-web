@@ -26,17 +26,17 @@ pipeline {
             post {
                 success {
                     rocketSend
-                        attachments: [color: 'green', text: 'Tests OK'],
+                        attachments: [color: 'green', text: 'Tests OK', title: 'Résultat des tests'],
                         channel: 'ic', message: 'Tests successful'
                 }
                 unstable {
                     rocketSend
-                        attachments: [color: 'red', text: 'Tests KO'],
+                        attachments: [color: 'red', text: 'Tests KO', title: 'Résultat des tests'],
                         channel: 'ic', message: 'Tests failed'
                 }
                 failure {
                     rocketSend
-                        attachments: [color: 'red', text: 'Tests KO'],
+                        attachments: [color: 'red', text: 'Tests KO', title: 'Résultat des tests'],
                         channel: 'ic', message: 'Tests failed'
                 }
             }
