@@ -18,12 +18,12 @@ pipeline {
             steps {
                 // On signale le début des Tests
                 //rocketSend channel: 'ic', message: 'Début des tests'
-                rocketSend(
+                rocketSend
                     attachments: [
-                        color: 'green', text: 'Build Succes', title: 'my attachment',
-                        color: 'green', text: 'Build Succes', title: 'my attachment'
+                        {color: 'green', text: 'Build Succes', title: 'my attachment'},
+                        {color: 'green', text: 'Build Succes', title: 'my attachment'}
                     ],
-                    channel: 'general', message: 'My message', rawMessage: true)
+                    channel: 'general', message: 'My message', rawMessage: true
 
                 // On run les tests
                 sh "mvn clean"
