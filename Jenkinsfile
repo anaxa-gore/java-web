@@ -20,8 +20,8 @@ pipeline {
                 //rocketSend channel: 'ic', message: 'Début des tests'
                 rocketSend
                     attachments: [
-                        (color: 'green', text: 'Build Succes', title: 'my attachment'),
-                        (color: 'green', text: 'Build Succes', title: 'my attachment')
+                        [color: 'green', text: 'Build Succes', title: 'my attachment'],
+                        [color: 'green', text: 'Build Succes', title: 'my attachment']
                     ],
                     channel: 'general', message: 'My message', rawMessage: true
 
