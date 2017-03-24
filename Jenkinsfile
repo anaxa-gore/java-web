@@ -25,7 +25,7 @@ pipeline {
             }
             post {
                 success {
-                    rocketSend attachments: [[color: 'red', text: 'Tests OK', title: 'Fin']], channel: 'ic', message: 'Fin des tests', rawMessage: true
+                    rocketSend attachments: [[color: 'green', text: 'Tests OK', title: 'Fin']], channel: 'ic', message: 'Fin des tests', rawMessage: true
                 }
                 unstable {
                     rocketSend attachments: [[color: 'red', text: 'Tests KO', title: 'Erreur']], channel: 'ic', message: 'Fin des tests', rawMessage: true
