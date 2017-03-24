@@ -25,19 +25,13 @@ pipeline {
             }
             post {
                 success {
-                    rocketSend
-                        attachments: [color: 'green', text: 'Tests OK', title: 'Résultat des tests'],
-                        channel: 'ic', message: 'Tests successful'
+                    rocketSend attachments: [color: 'green', text: 'Tests OK', title: 'Résultat des tests'], channel: 'ic', message: 'Tests successful'
                 }
                 unstable {
-                    rocketSend
-                        attachments: [color: 'red', text: 'Tests KO', title: 'Résultat des tests'],
-                        channel: 'ic', message: 'Tests failed'
+                    rocketSend attachments: [color: 'red', text: 'Tests KO', title: 'Résultat des tests'], channel: 'ic', message: 'Tests failed'
                 }
                 failure {
-                    rocketSend
-                        attachments: [color: 'red', text: 'Tests KO', title: 'Résultat des tests'],
-                        channel: 'ic', message: 'Tests failed'
+                    rocketSend attachments: [color: 'red', text: 'Tests KO', title: 'Résultat des tests'], channel: 'ic', message: 'Tests failed'
                 }
             }
         }
